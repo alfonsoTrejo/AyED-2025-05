@@ -1,5 +1,5 @@
 package com.mycompany.algoritmopractica5_2025;
-public class algoritmosSorts {
+public class algoritmosSorts{
 
     // existing methods (quickSort, selectionSort, shellSort)…
 
