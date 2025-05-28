@@ -40,4 +40,26 @@ public class CSVColumnar {
                       .mapToInt(s -> (int) Double.parseDouble(s))
                       .toArray();
     }
+
+    public List<String> getHeaders() {
+        // TODO Auto-generated method stub
+        return new ArrayList<>(columns.keySet());
+
+    }
+
+    public List<String[]> getRows() {
+
+        List<String[]> rows = new ArrayList<>();
+        int numRows = columns.values().stream().mapToInt(List::size).max().orElse(0);
+        for (int i = 0; i < numRows; i++) {
+            String[] row = new String[columns.size()];
+            int j = 0;
+            for (String header : columns.keySet()) {
+                List<String> colData = columns.get(header);
+                row[j++] = i < colData.size() ? colData.get(i) : "";
+            }
+            rows.add(row);
+        }
+        return rows;
+    }
 }

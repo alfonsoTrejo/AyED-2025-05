@@ -17,6 +17,7 @@ public class algoritmosSorts {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private static <T extends Comparable<? super T>> void merge(T[] a, int l, int m, int r) {
         int n1 = m - l + 1;
         int n2 = r - m;
